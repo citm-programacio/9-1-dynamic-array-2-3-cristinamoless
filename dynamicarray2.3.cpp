@@ -1,19 +1,33 @@
-// dynamicarray2.3.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
-
 #include <iostream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int num;
+	int len = 0;
+	int* numbers = new int[len];
+
+	for (int i = 0; i <= len; i++) {
+		cout << "add a number to an array: " << endl;
+		cin >> num;
+		len++;
+		int* newnumbers = new int[len];
+		for (int i = 0; i < len - 1; i++) {
+			newnumbers[i] = numbers[i];
+		}
+		newnumbers[len - 1] = num;
+		delete[] numbers;
+		numbers = newnumbers;
+
+		cout << "[";
+		for (int j = 0; j < len; j++) {
+			cout << numbers[j] << ",";
+		}
+		cout << "]" << endl;
+
+		if (len == 5) {
+			break;
+		}
+			
+ }
 }
-
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
-
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
